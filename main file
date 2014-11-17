@@ -1,0 +1,52 @@
+<html>
+<body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<p>Save the Aardvarks Foundation - purchase a coffee</p>
+
+<button>Click to purchase coffee</button>
+
+<p>
+Regular - $9 <br>
+Decaf - $8 <br>
+Mocha - $11
+</p>
+
+<p> <i>Note - spend $100, get $15 off! </i></p>
+
+
+
+<script>
+
+$(document).ready(function(){
+    $('button').click(function(){
+        total();
+    });
+});
+
+function total() {
+    var reg = Number(prompt ("how many regular?"));
+    var decaf = Number(prompt("how many decaf?"));
+    var mocha = Number(prompt ("how many mocha?"));
+    var sum = reg*9 + decaf*8 + mocha*11;
+    if (sum > 100){
+        sum = sum - 15;
+    }
+    if (sum) {
+        document.write("Your total is " + sum + ". Thank you for your donation to the aardvarks.");
+    }
+    if(isNaN(sum)) {
+       document.write("Whoops, something went wrong... please try your order again");
+    $('body').append("<button>try again</button>")
+    $('button').click(function(){
+       location.reload();
+    });
+    }
+}
+
+
+
+</script>
+
+</body>
+</html>
