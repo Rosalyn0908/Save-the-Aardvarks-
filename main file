@@ -33,7 +33,7 @@ function total() {
         sum = sum - 15;
     }
     if (sum) {
-        document.write("Your total is " + sum + ". Thank you for your donation to the aardvarks.");
+        document.write("Your total is $" + sum + ". Thank you for your donation to the aardvarks.");
     }
     if(isNaN(sum)) {
        document.write("Whoops, something went wrong... please try your order again");
